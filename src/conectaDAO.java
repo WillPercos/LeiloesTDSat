@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 
 public class conectaDAO {
     
-    private static final String URL = "jdbc:mysql://127.0.0.1:3306/uc11";
+    private static final String URL = "jdbc:mysql://127.0.0.1:3306/uc11?useSSL=false";
     private static final String USUARIO = "root";
     private static final String SENHA = "B4nc0//D4d0$";
     
@@ -19,5 +19,4 @@ public class conectaDAO {
         }
         return conn;
     }
-
 }

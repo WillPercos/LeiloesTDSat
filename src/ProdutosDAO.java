@@ -19,8 +19,12 @@ public class ProdutosDAO {
             prep.setInt(2, produto.getValor());
             prep.setString(3, produto.getStatus());
             
-            prep.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso!");
+            int rowsAffected = prep.executeUpdate();
+            if (rowsAffected > 0) {
+                JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso!");
+            } else {
+                JOptionPane.showMessageDialog(null, "Falha ao cadastrar produto.");
+            }
         } catch (SQLException erro) {
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar produto: " + erro.getMessage());
         } finally {
@@ -32,6 +36,7 @@ public class ProdutosDAO {
             }
         }
     }
+
 
     
     public ArrayList<ProdutosDTO> listarProdutos() {

@@ -1,5 +1,8 @@
 
 import javax.swing.JOptionPane;
+import javax.swing.JButton;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -11,12 +14,21 @@ import javax.swing.JOptionPane;
  * @author Adm
  */
 public class cadastroVIEW extends javax.swing.JFrame {
+ private JButton btnConsultarVendas;
 
     /**
      * Creates new form cadastroVIEW
      */
     public cadastroVIEW() {
         initComponents();
+        btnConsultarVendas = new JButton("Consultar Vendas");
+        btnConsultarVendas.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new TelaVendas();
+            }
+        });
+        add(btnConsultarVendas);
     }
 
     /**
